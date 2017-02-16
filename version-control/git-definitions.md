@@ -14,3 +14,5 @@ Commit is saving your changes as a new point of record in version control. A goo
 
 * What is a merge conflict?
 Merge conflict is when the same line has been altered in a different branch and you try to merge them. 
+
+blerg
