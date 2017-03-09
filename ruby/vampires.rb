@@ -1,14 +1,16 @@
-begin 
 
 p "How many employees will be processed?"
 employee_amount = gets.chomp.to_i
 
 i = 0
 
-while i < employee_amount
 
+while i < employee_amount
+	
+	vampire = "Results inconclusive."
+	
 	p "What is your name?"
-	fname = gets.chomp.capitalize
+	fname = gets.chomp
 
 	p "How old are you?"
 	age = gets.chomp.to_i
@@ -17,13 +19,11 @@ while i < employee_amount
 	birthdate = gets.chomp.to_i
 
 	p "Our company cafeteria serves garlic bread. Should we order some for you?"
-	garlic = gets.chomp.capitalize 
+	garlic = gets.chomp.downcase 
 
 	p "Would you like to enroll in the company’s health insurance?"
-	insurance = gets.chomp.capitalize
+	insurance = gets.chomp.downcase
 
-
-	vampire = “Results inconclusive.”
 
 	# age correct
 	if age == (2017 - birthdate) || (2016 - birthdate)
@@ -32,49 +32,51 @@ while i < employee_amount
 	end 
 
 	# garlic 
-	if garlic == "YES" 
+	if garlic == "yes" 
 		eat_garlic = true
 	else eat_garlic = false
 	end
 
 	# insurance 
-	if insurance == "YES"
+	if insurance == "yes"
 		want_insurance = true
 	else want_insurance = false
 	end
 
 
 	if age_correct && (eat_garlic || want_insurance)
-		vampire = “Probably isnt a vampire.”
+		vampire = "Probably isnt a vampire."
 	end
 
 	if (age_correct == false) && (eat_garlic == false || want_insurance == false)
-		vampire = “Probably a vampire.”
+		vampire = "Probably a vampire."
 	end 
 
 	if (age_correct == false) && (eat_garlic == false) && (want_insurance == false)
-		vampire = “Almost certainly a vampire.”
+		vampire = "Almost certainly a vampire."
 	end
 
-	if fname == (“Drake Cula” || “Tu Fang”)
-		vampire = “Definitely a vampire.”
+	if fname == "Drake Cula" || fname == "Tu Fang"
+		vampire = "Definitely a vampire."
 	end
 
-	until allergy == "DONE"
+	# allergy 
+	allergy = "blank"
+	until allergy == "done"
 		p "Name any allergies, one at a time. Type 'done' when finished."
-		allergy = gets.chomp.capitalize
-		if allergy == "SUNSHINE"
+		allergy = gets.chomp.downcase
+		if allergy == "sunshine"
 			vampire = "Probably a vampire"
 			break
 		end
 	end
 
-	print vampire
+	p vampire
 
 	i += 1
-end 
+end
 
-end 
-abort ("Actually, never mind! What do these questions have to do with anything? Let's all be friends.")
+
+puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
 
 
