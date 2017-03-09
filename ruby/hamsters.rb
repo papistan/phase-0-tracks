@@ -11,5 +11,11 @@ puts "Are you a good candidate for adoption? yes/no"
 adoptable = gets.chomp
 
 puts "How old are you?"
-age = gets.chomp.to_i
+age = gets.chomp
 
+if age == ""
+	age = nil
+	p age
+else age = age.to_i
+	p age
+end
