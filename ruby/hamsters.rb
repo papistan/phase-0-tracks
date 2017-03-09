@@ -15,7 +15,16 @@ age = gets.chomp
 
 if age == ""
 	age = nil
-	p age
 else age = age.to_i
-	p age
 end
+
+if adoptable == "yes"
+   adopt = "is"
+else adopt = "is not"
+end
+
+puts "Hamster's name is #{name}"
+puts "Its preferred volume level is #{prefered_volume}"
+puts "Its fur is #{fur_color}"
+puts "It #{adopt} ready for adoption"
+puts "It is #{age} years old."
