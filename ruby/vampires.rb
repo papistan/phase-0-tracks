@@ -8,7 +8,7 @@ i = 0
 while i < employee_amount
 
 	p "What is your name?"
-	name = gets.chomp.capitalize
+	fname = gets.chomp.capitalize
 
 	p "How old are you?"
 	age = gets.chomp.to_i
@@ -26,7 +26,7 @@ while i < employee_amount
 	vampire = “Results inconclusive.”
 
 	# age correct
-	if age = (2017 - birthdate) || (2016 - birthdate)
+	if age == (2017 - birthdate) || (2016 - birthdate)
 		age_correct = true
 	else age_correct = false
 	end 
@@ -45,18 +45,18 @@ while i < employee_amount
 
 
 	if age_correct && (eat_garlic || want_insurance)
-		vampire = “Probably not a vampire.”
+		vampire = “Probably isnt a vampire.”
 	end
 
-	if (age_correct = false) && (eat_garlic = false || want_insurance = false)
+	if (age_correct == false) && (eat_garlic == false || want_insurance == false)
 		vampire = “Probably a vampire.”
 	end 
 
-	if (age_correct = false) && (eat_garlic = false) && (want_insurance = false)
+	if (age_correct == false) && (eat_garlic == false) && (want_insurance == false)
 		vampire = “Almost certainly a vampire.”
 	end
 
-	if name == (“Drake Cula” || “Tu Fang”)
+	if fname == (“Drake Cula” || “Tu Fang”)
 		vampire = “Definitely a vampire.”
 	end
 
@@ -74,6 +74,7 @@ while i < employee_amount
 	i += 1
 end 
 
+end 
 abort ("Actually, never mind! What do these questions have to do with anything? Let's all be friends.")
 
 
