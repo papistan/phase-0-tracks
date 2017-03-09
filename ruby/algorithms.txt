@@ -1,0 +1,27 @@
+Elevator Robot
+
+buttons = (button > 2)
+button = round or square object
+
+When elevator doors open:
+1. Move through elevator doors to middle of elevator floor space. Turn 180 degrees, scan wall ahead for buttons. Move to front of them. 
+2. Until button with desired floor number is read
+	-Starting with bottom left button, read number on button and then
+	- move to up one button, read, repeat
+	  - if no above button, move right one button, read, move down one button, repeat
+	  - if no below button, move right one button, read, move up one button, repeat
+3. Push button
+4. When doors open, move left to middle-front of elevator
+5. Exit elevator
+
+
+Algorithm for sleep
+
+counter = 0
+
+When clock turns 22:00:00: 
+1. Go to bed, lie down, close eyes
+2. Until counter hits 8, each hour make (counter = counter + 1)
+If counter = 8: 
+1. open eyes, get up
+2. Reset counter to 0
