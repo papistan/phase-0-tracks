@@ -1,4 +1,9 @@
+p "How many employees will be processed?"
+employee_amount = gets.chomp.to_i
 
+i = 0
+
+while i < employee_amount
 
 p "What is your name?"
 name = gets.chomp.capitalize
@@ -54,6 +59,10 @@ if name == (“Drake Cula” || “Tu Fang”)
 end
 
 print vampire
+
+i += 1
+
+end 
 
 
 
