@@ -5,6 +5,7 @@
 # Return newly changed string
 # Do not change spaces 
 
+
 	def encrypt(str)
 	  # puts str
 	  y = 0
@@ -51,4 +52,27 @@
 # encrypt("swordfish")
 # encrypt("swordfish")
 # p $w
-decrypt(encrypt("swordfish"))
+# decrypt(encrypt("swordfish"))
+
+
+
+# Prompt question of if they would like to decrypt encrypt a password. 
+# ask for the password
+# run through code
+# Print results results to screen
+# Exits 
+
+# Ask user if they want to encryp or decrypt 
+puts "Would you like to encrypt of decrypt a password?"
+response = gets.chomp
+
+# ask for password
+puts "Enter password"
+password= gets.chomp
+
+if response == "encrypt"
+	encrypt(password)
+else decrypt(password)
+end
+
+
