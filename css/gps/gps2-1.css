@@ -1,0 +1,38 @@
+body {
+  font-family: Helvetica, sans-serif;
+}
+
+.column-1 {
+  background-color: lightblue;
+  /* display: inline-block; */
+  width: 45%;
+  float: left;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.column-2 {
+   background-color: pink; 
+  /*  display: inline-block;
+   vertical-align: top; */
+   width: 45%;
+   float: right;
+   margin-right: 20px;
+   margin-bottom: 20px;
+}
+
+header {
+  background-image: url("https://assets-cdn.github.com/images/modules/logos_page/Octocat.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+header p {
+  padding-right: 13%;
+}
+
+footer {
+    background-color: bisque;
+    clear: both;
+}
