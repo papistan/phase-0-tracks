@@ -21,20 +21,53 @@ class Santa
 	def about
 		puts "Ethnicity: #{@ethnicity}"
 		puts "Gender: #{@gender}"
+		puts "Age: #{@age}"
+		puts "Ranking #{@reindeer_ranking}"
+		puts "______________"
 	end
+
+	def celebrate_birthday
+		@age += 1
+	end
+
+	def get_mad_at(take_name)
+		@reindeer_ranking.delete_if {|x| x == take_name}
+		@reindeer_ranking << take_name
+	end
+
+	def gender=(reset)
+		@gender = reset
+	end
+
+	def age
+		@age
+	end
+
+	def ethnicity 
+		@ethnicity
+	end
+
 
 end
 
-redhat = []
+redhat = Santa.new("male", "white")
+bluehat = Santa.new("female", "black")
 
-example_genders = ["male", "female", "trans", "non", "furry"]
+redhat.about
+bluehat.about
 
-example_ethnicity = ["mestizo", "white", "black", "what", "human"]
+redhat.get_mad_at("Blitzen")
+bluehat.get_mad_at("Rudolph")
 
-redhat << Santa.new(example_genders[4], example_ethnicity[1])
+redhat.celebrate_birthday
 
-redhat << Santa.new(example_genders[3], example_ethnicity[2])
+redhat.gender=("alien")
 
-redhat[0].about
 
-redhat[1].about
+puts redhat.age
+puts bluehat.ethnicity
+
+redhat.about
+bluehat.about
+
+
