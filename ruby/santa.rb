@@ -2,8 +2,8 @@
 
 class Santa
 
-	attr_reader :age, :ethnicity
-	attr_accessor :gender
+	attr_reader :ethnicity
+	attr_accessor :gender, :age
 
 	def speak
 		puts "Ho, ho, ho! Haaaappy holidays!" 
@@ -41,24 +41,37 @@ class Santa
 
 end
 
-redhat = Santa.new("male", "white")
-bluehat = Santa.new("female", "black")
+# redhat = Santa.new("male", "white")
+# bluehat = Santa.new("female", "black")
 
-redhat.about
-bluehat.about
+# redhat.about
+# bluehat.about
 
-redhat.get_mad_at("Blitzen")
-bluehat.get_mad_at("Rudolph")
+# redhat.get_mad_at("Blitzen")
+# bluehat.get_mad_at("Rudolph")
 
-redhat.celebrate_birthday
+# redhat.celebrate_birthday
 
-redhat.gender=("alien")
+# redhat.gender=("alien")
 
 
-puts redhat.age
-puts bluehat.ethnicity
+# puts redhat.age
+# puts bluehat.ethnicity
 
-redhat.about
-bluehat.about
+# redhat.about
+# bluehat.about
+
+
+example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+
+x = 3
+x.times {|| 
+new_santa = Santa.new(example_genders.sample, example_ethnicities.sample)
+new_santa.age = rand 0..140
+puts new_santa.about
+}
+
+
 
 
