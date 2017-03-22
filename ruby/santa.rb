@@ -2,6 +2,9 @@
 
 class Santa
 
+	attr_reader :age, :ethnicity
+	attr_accessor :gender
+
 	def speak
 		puts "Ho, ho, ho! Haaaappy holidays!" 
 	end
@@ -33,18 +36,6 @@ class Santa
 	def get_mad_at(take_name)
 		@reindeer_ranking.delete_if {|x| x == take_name}
 		@reindeer_ranking << take_name
-	end
-
-	def gender=(reset)
-		@gender = reset
-	end
-
-	def age
-		@age
-	end
-
-	def ethnicity 
-		@ethnicity
 	end
 
 
