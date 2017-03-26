@@ -69,3 +69,20 @@ remove_grocery_item(grocery_list, "lemonade")
 update_grocery_quantity(grocery_list, "ice cream", 1)
 print print_list(grocery_list)
 
+# What did you learn about pseudocode from working on this challenge?
+I learned how to structure it in a way that better allows your structure later, especially for methods. 
+
+# What are the tradeoffs of using arrays and hashes for this challenge?
+  arrays are just easier to build our methods for and iterate over. 
+  
+# What does a method return?
+    the value of the last line it evaluates
+    
+# What kind of things can you pass into methods as arguments?
+   variables like integers, strings, booleans, etc
+# How can you pass information between methods?
+    you can pass using instance variables or regular variables, depending on your code and program. 
+# What concepts were solidified in this challenge, and what concepts are still confusing?
+    Lots of concepts from this challenge, honestly. 
+      How to structure a code block for a hash call of .each. 
+      How to add a value to a hash
