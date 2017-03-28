@@ -1,15 +1,15 @@
 
 # Virus Predictor
 
-# I worked on this challenge [by myself, with: ].
-# We spent [#] hours on this challenge.
+# I worked on this challenge [by myself, with: Carlos].
+# We spent [1.5] hours on this challenge.
 
 # EXPLANATION OF require_relative
-#
+## require - pulls from rubygems.org libraries versus reguire_relative that 
+# seeks out from selected file within the same directory. 
 #
 require_relative 'state_data'
-# require - pulls from rubygems.org libraries versus reguire_relative that 
-# seeks out from selected file within the same directory. 
+
 
 
 
@@ -24,32 +24,32 @@ class VirusPredictor
 
 # returns strings with data from both methods
   def virus_effects
-    predicted_deaths(@population_density, @population, @state)
-    speed_of_spread(@population_density, @state)
+    number_of_deaths = predicted_deaths
+    speed = speed_of_spread
+
+    print "#{@state} will lose #{number_of_deaths} people in this outbreak and will spread across the state in #{speed} months.\n\n"
+  
   end
 
   private
 # calculate and return number of deaths from outbreak for a given state conditional on population density
-  def predicted_deaths(population_density, population, state)
+  def predicted_deaths
     # predicted deaths is solely based on population density
     if @population_density >= 200
-      number_of_deaths = (@population * 0.4).floor
+       (@population * 0.4).floor
     elsif @population_density >= 150
-      number_of_deaths = (@population * 0.3).floor
+      (@population * 0.3).floor
     elsif @population_density >= 100
-      number_of_deaths = (@population * 0.2).floor
+      (@population * 0.2).floor
     elsif @population_density >= 50
-      number_of_deaths = (@population * 0.1).floor
+      (@population * 0.1).floor
     else
-      number_of_deaths = (@population * 0.05).floor
+     (@population * 0.05).floor
     end
-
-    print "#{@state} will lose #{number_of_deaths} people in this outbreak"
-
   end
 
-# returns and prints calculated speed of spread in months based on population density conditionally
-  def speed_of_spread(population_density, state) #in months
+ # returns and prints calculated speed of spread in months based on population density conditionally
+  def speed_of_spread #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
     speed = 0.0
@@ -65,11 +65,7 @@ class VirusPredictor
     else
       speed += 2.5
     end
-
-    puts " and will spread across the state in #{speed} months.\n\n"
-
   end
-
 end
 
 #=======================================================================
@@ -97,3 +93,36 @@ end
 
 #=======================================================================
 # Reflection Section
+# What are the differences between the two different hash syntaxes shown in the state_data file?
+  # => allow strings as keys vs key: where you could not have a string as a key. So that's why => was used so that states could be printed within the output string
+
+# What does require_relative do? How is it different from require?
+  # require - pulls from rubygems.org libraries versus reguire_relative that seeks out from selected file within the same directory. 
+
+# What are some ways to iterate through a hash?
+  # I can't think of or find online another method other than .each 
+
+# When refactoring virus_effects, what stood out to you about the variables, if anything?
+  # they seemed very repetitive, so like they should be reduced. 
+
+# What concept did you most solidify in this challenge?
+  # probably the arguments. Since we were able to remove them, I was able to think more clearly about their relationship with instance variables and access
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
