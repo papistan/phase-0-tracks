@@ -47,7 +47,14 @@ var newArray = [];
 	return newArray
 }
 
-console.log(arrayCreator(3));
+
+for (var i = 0; i < 10; i++) {
+	x = arrayCreator(3); 
+	console.log(x); 
+	console.log(longest(x));
+}
+
+// console.log(arrayCreator(3));
 
 // var blerg = {name: "Steven", age: 54};
 // var tamir = {name: "Tamir", age: 54};
