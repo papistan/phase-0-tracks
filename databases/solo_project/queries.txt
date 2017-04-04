@@ -1,0 +1,55 @@
+
+
+1: SELECT * FROM fruit;
+
+1|kumquat|3|orange|1
+2|blackberry|2|purple|2
+3|cherry|1|red|3
+
+2: UPDATE fruit SET flavor_rank=3 WHERE name="blackberry";
+
+3: SELECT * FROM fruit, genus WHERE fruit.genus_id = genus.id;
+
+1|kumquat|3|orange|1|1|citrus
+2|blackberry|3|purple|2|2|rubus
+3|cherry|1|red|3|3|prunus
+
+4: SELECT genus.name, fruit.name, fruit.color FROM fruit, genus WHERE fruit.genus_id = genus.id;
+
+citrus|kumquat|orange
+rubus|blackberry|purple
+prunus|cherry|red
+
+5: DELETE FROM fruit WHERE name="blackberry";
+
+_________________
+RELEASE 3
+
+SELECT fruit.name, genus.id FROM fruit INNER JOIN genus ON genus.id=fruit.genus_id;
+
+kumquat|1
+cherry|3
+________
+
+SELECT fruit.name, genus.name FROM fruit LEFT JOIN genus WHERE fruit.name="cherry";
+
+cherry|citrus
+cherry|rubus
+cherry|prunus
+
+___
+
+SELECT fruit.name, genus.name FROM fruit LEFT JOIN genus ON genus.id=fruit.genus_id WHERE fruit.name="cherry";
+
+cherry|prunus
+
+___________
+
+SELECT fruit.name, genus.name FROM fruit INNER JOIN genus ON genus.id=fruit.genus_id;
+
+kumquat|citrus
+cherry|prunus
+
+
+
+
