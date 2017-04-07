@@ -14,11 +14,11 @@ create_table_playlist = <<-SQL
     id INTEGER PRIMARY KEY,
     name VARCHAR(255),
     link VARCHAR(255),
-    filth_level INT,
-    mood_id INT,
-    FOREIGN KEY (mood_id) REFERENCES mood(id),
-    genre_id INT,
-    FOREIGN KEY (genre_id) REFERENCES genre(id)
+    filth_level INTEGER,
+    mood_id INTEGER,
+    FOREIGN KEY(mood_id) REFERENCES mood(id),
+    genre_id INTEGER,
+    FOREIGN KEY(genre_id) REFERENCES genre(id)
   )
 SQL
 
@@ -142,7 +142,7 @@ def create_item(db, name, link, filth_level, mood, genre)
   mood_num = mood_id_return(mood)
   genre_num = genre_id_return(genre)
   #inputs all variables to update the playlist table for new item
-  db.execute("INSERT INTO playlist (name, link, filth_level, mood_id, genre_id) VALUES (?, ?)", [name, link, filth_level, mood_num, genre_num])
+  db.execute("INSERT INTO playlist (db, name, link, filth_level, mood_id, genre_id) VALUES (?, ?, ?, ?, ?)", [name, link, filth_level, mood_num, genre_num])
    
 end
 
@@ -156,12 +156,9 @@ def recall(current_mood, current_genre, filth_limits)
     FROM playlist, mood, genre 
     WHERE playlist.mood_id = mood.id 
     AND playlist.genre_id = genre.id 
-    AND 
-    mood.name = current_mood
-    AND 
-    genre.name = current_genre
-    AND 
-    playlist.filth_level = filth_limits;"
+    AND mood.name = current_mood
+    AND genre.name = current_genre
+    AND playlist.filth_level = filth_limits;"
     )
   
   puts list  #on one line each????
