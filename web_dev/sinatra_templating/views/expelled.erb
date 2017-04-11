@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Expel a Student!</title>
+</head>
+<body>
+  <h1>Expel a Student Here!</h1>
+  <p>Enter the student you'd like to expel or spin the 'wheel of expulsion'!</p>
+    <form action="/students/expelled" method="POST">
+      <input type="text" name="name" placeholder="Name">
+      <button type="submit">Save</button>
+    </form>
+    <form action="/students/expelRandom" method="POST">
+      <p>Spin the Wheel of Expulsion!</p>
+      <button type="submit">Spin</button>
+    </form>
+</body>
+</html>
